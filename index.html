@@ -1,1 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eliane Hougée – Design & Remote Support</title>
+  <meta name="description" content="Reliable design & remote support for coaches and solopreneurs. Brand-consistent visuals, calm processes, clean output." />
+  <style>
+    :root{
+      --bg:#fbf8f4;
+      --paper:#ffffff;
+      --ink:#151515;
+      --muted:#5a5a5a;
+      --line:#ded7cf;
+      --accent:#b64b12;
+      --btn:#1a1a1a;
+      --btnText:#ffffff;
+      --radius:18px;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      color:var(--ink);
+      background:var(--bg);
+      letter-spacing:.2px;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 60px;}
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+    .section{padding:34px 28px}
+    .divider{height:1px; background:var(--line)}
+    .topline{
+      text-align:center;
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:#2a2a2a;
+    }
+    h1{
+      margin:10px 0 14px;
+      text-align:center;
+      font-weight:500;
+      font-size:32px;
+      line-height:1.15;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+    .sub{
+      text-align:center;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+      max-width:720px;
+      margin:0 auto;
+    }
+    .pillrow{
+      display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+      margin:18px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .btnrow{display:flex; justify-content:center; margin-top:18px}
+    .btn{
+      background:var(--btn);
+      color:var(--btnText);
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:999px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      border:1px solid #000;
+    }
+    .banner{
+      background:var(--accent);
+      color:#fff;
+      text-align:center;
+      padding:14px 18px;
+      font-style:italic;
+      letter-spacing:1px;
+    }
+    h2{
+      margin:0 0 10px;
+      text-align:center;
+      font-weight:500;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:14px;
+      color:#2a2a2a;
+    }
+    .twocol{
+      display:grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap:18px;
+      align-items:start;
+      margin-top:18px;
+    }
+    .vline{background:var(--line); width:1px; height:100%;}
+    .col h3{
+      margin:0 0 10px;
+      font-weight:500;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:12px;
+      text-align:center;
+      color:#2a2a2a;
+    }
+    ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.8; font-size:14px;}
+    .packages{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .pkg{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 12px;
+      text-align:center;
+      background:#fff;
+    }
+    .tag{
+      display:inline-block;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:10px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:#333;
+      margin-bottom:10px;
+    }
+    .tag.pop{background:#f7efe8; border-color:#e7d6c7;}
+    .pkg h4{
+      margin:6px 0 10px;
+      font-weight:500;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:12px;
+    }
+    .price{
+      font-size:20px;
+      margin-top:10px;
+      letter-spacing:1px;
+    }
+    .small{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+    .gridwork{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .ph{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:linear-gradient(180deg,#faf7f3,#ffffff);
+      height:140px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#8a7f76;
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+    .aboutrow{
+      display:grid;
+      grid-template-columns: 1.5fr .8fr;
+      gap:18px;
+      align-items:center;
+      margin-top:18px;
+    }
+    .about p{margin:0 0 10px; color:var(--muted); line-height:1.7; font-size:14px;}
+    .avatar{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:14px;
+      text-align:center;
+    }
+    .circle{
+      width:86px; height:86px; border-radius:50%;
+      margin:0 auto 10px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg,#f2ebe4,#ffffff);
+    }
+    .foot{
+      padding:18px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      color:#2a2a2a;
+      font-size:12px;
+      letter-spacing:1px;
+      flex-wrap:wrap;
+      background:#111;
+      color:#fff;
+    }
+    .foot a{color:#fff}
+    .note{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      opacity:.85;
+    }
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+      align-items:start;
+    }
+    .contact .box{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:#fff;
+    }
+    .contact .box h4{
+      margin:0 0 8px;
+      font-weight:500;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:12px;
+    }
+    .contact .box p{margin:0; color:var(--muted); line-height:1.7; font-size:14px;}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    @media (max-width: 900px){
+      .packages{grid-template-columns: repeat(2, 1fr);}
+      .gridwork{grid-template-columns: repeat(2, 1fr);}
+      .aboutrow{grid-template-columns: 1fr;}
+      .twocol{grid-template-columns: 1fr; }
+      .vline{display:none}
+      h1{font-size:28px}
+      .contact{grid-template-columns:1fr}
+    }
+  </style>
+</head>
 
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <div class="section">
+        <div class="topline">Reliable Design & Remote Support for Coaches and Solopreneurs</div>
+        <h1>Reliable Design & Remote Support<br/>for Coaches and Solopreneurs</h1>
+        <p class="sub">
+          I support coaches with brand-consistent design: social media & visual design (Canva or Adobe)
+        </p>
+        <div class="pillrow">
+          <span>• Multilingual communication (EN / DE / NL / CH)</span>
+          <span>• Remote collaboration</span>
+          <span>• UTC +7 flexible overlap with Europe, Australia, and U.S. mornings</span>
+        </div>
+        <div class="btnrow">
+          <a class="btn" href="#packages">Packages</a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="banner">“Designed with technology. Tuned for humans.”</div>
+      <div class="divider"></div>
+
+      <div class="section">
+        <h2>What I help you with</h2>
+        <div class="twocol">
+          <div class="col">
+            <h3>Graphic Design</h3>
+            <ul>
+              <li>Social Media Graphics</li>
+              <li>Banners & Flyers</li>
+              <li>Layouts (PDF / Web)</li>
+              <li>Brand-consistent Visuals</li>
+            </ul>
+          </div>
+          <div class="vline"></div>
+          <div class="col">
+            <h3>Remote Support</h3>
+            <ul>
+              <li>Email Handling & Coordination</li>
+              <li>Scheduling & Admin Support</li>
+              <li>Client Communication</li>
+              <li>Support Tasks for Your Business</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section" id="packages">
+        <h2>Packages</h2>
+        <div class="packages">
+          <div class="pkg">
+            <span class="tag">Text Project</span>
+            <h4>Try My Task</h4>
+            <div class="small">A simple way to experience my working style. For coaches who want to test collaboration before committing.</div>
+            <div class="price">17 USD</div>
+            <div class="small">/ hour</div>
+          </div>
+
+          <div class="pkg">
+            <span class="tag pop">Most Popular</span>
+            <h4>Social Media Starter</h4>
+            <div class="small">Consistent social media visuals. Clear and brand-aligned.</div>
+            <div class="price">25 USD</div>
+            <div class="small">10 custom graphics</div>
+          </div>
+
+          <div class="pkg">
+            <span class="tag">Ongoing Design Support</span>
+            <h4>Weekly Support</h4>
+            <div class="small">Reliable weekly design support. Ideal for long-term collaboration.</div>
+            <div class="price">350 USD</div>
+            <div class="small">/ week</div>
+          </div>
+
+          <div class="pkg">
+            <span class="tag">Priority Design Support</span>
+            <h4>Priority Support</h4>
+            <div class="small">Your tasks are handled first. Ideal for launches, deadlines and high-demand phases.</div>
+            <div class="price">700 USD</div>
+            <div class="small">/ week</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <h2>Selected Work</h2>
+        <div class="gridwork">
+          <div class="ph">Project 1</div>
+          <div class="ph">Project 2</div>
+          <div class="ph">Project 3</div>
+          <div class="ph">Project 4</div>
+          <div class="ph">Project 5</div>
+          <div class="ph">Project 6</div>
+        </div>
+        <p class="small" style="text-align:center; margin-top:12px;">
+          (Placeholders for now — we’ll replace these with your real portfolio images.)
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <h2>About</h2>
+        <div class="aboutrow">
+          <div class="about">
+            <p>
+              I’m Eliane — I work with coaches who want consistent visuals and reliable support — without constant back and forth and micromanagement.
+            </p>
+            <p>
+              I’m a trained graphic designer with combined experience across design and remote collaboration.
+            </p>
+            <p>
+              Simple process. Clear scope. Clean output.
+            </p>
+          </div>
+          <div class="avatar">
+            <div class="circle" aria-hidden="true"></div>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <h2>Practical Details</h2>
+        <ul>
+          <li>Rates: starting at 30 CHF / hour (packages available)</li>
+          <li>Timezone: UTC +6 (overlap with Europe)</li>
+          <li>Availability: approx. 10–20 hours per week</li>
+          <li>Languages: English, German, Dutch, Swiss-German</li>
+        </ul>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section" id="contact">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div class="box">
+            <h4>Email</h4>
+            <p class="mono">eliane.inhomeoffice@gmail.com</p>
+          </div>
+          <div class="box">
+            <h4>Booking</h4>
+            <p>For bookings, availability or questions, feel free to reach out.</p>
+            <p class="small" style="margin-top:8px;">Ask for availability</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <div>
+          <div><strong>Eliane Hougée</strong></div>
+          <div class="note">Graphic Design & Remote Support · EN · DE · NL · CH</div>
+        </div>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
