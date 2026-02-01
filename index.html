@@ -3,252 +3,477 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eliane Hougée – Design & Remote Support</title>
+  <title>Eliane Hougée – Reliable Design & Remote Support</title>
   <meta name="description" content="Reliable design & remote support for coaches and solopreneurs. Brand-consistent visuals, calm processes, clean output." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#fbf8f4;
-      --paper:#ffffff;
-      --ink:#151515;
-      --muted:#5a5a5a;
-      --line:#ded7cf;
-      --accent:#b64b12;
-      --btn:#1a1a1a;
-      --btnText:#ffffff;
-      --radius:18px;
-      --max:980px;
+    :root {
+      --bg: #f5f0ea;
+      --paper: #ffffff;
+      --ink: #1a1a1a;
+      --muted: #5a5a5a;
+      --line: #e0d8cf;
+      --accent: #c4a484;
+      --accent-dark: #a08060;
+      --btn: #1a1a1a;
+      --btn-text: #ffffff;
+      --radius: 20px;
+      --radius-sm: 12px;
+      --max: 720px;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      color:var(--ink);
-      background:var(--bg);
-      letter-spacing:.2px;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 60px;}
-    .card{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:0 10px 30px rgba(0,0,0,.04);
+
+    html {
+      scroll-behavior: smooth;
     }
-    .section{padding:34px 28px}
-    .divider{height:1px; background:var(--line)}
-    .topline{
-      text-align:center;
-      font-size:12px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      color:#2a2a2a;
+
+    body {
+      font-family: var(--font-serif);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    h1{
-      margin:10px 0 14px;
-      text-align:center;
-      font-weight:500;
-      font-size:32px;
-      line-height:1.15;
-      letter-spacing:2px;
-      text-transform:uppercase;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .sub{
-      text-align:center;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.55;
-      max-width:720px;
-      margin:0 auto;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
-    .pillrow{
-      display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
-      margin:18px 0 0;
-      color:var(--muted);
-      font-size:13px;
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 40px 20px 60px;
     }
-    .btnrow{display:flex; justify-content:center; margin-top:18px}
-    .btn{
-      background:var(--btn);
-      color:var(--btnText);
-      text-decoration:none;
-      padding:10px 18px;
-      border-radius:999px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size:12px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      border:1px solid #000;
+
+    .card {
+      background: var(--paper);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.06);
     }
-    .banner{
-      background:var(--accent);
-      color:#fff;
-      text-align:center;
-      padding:14px 18px;
-      font-style:italic;
-      letter-spacing:1px;
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 32px 48px;
+      text-align: center;
     }
-    h2{
-      margin:0 0 10px;
-      text-align:center;
-      font-weight:500;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      font-size:14px;
-      color:#2a2a2a;
+
+    .hero-label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
     }
-    .twocol{
-      display:grid;
-      grid-template-columns: 1fr 1px 1fr;
-      gap:18px;
-      align-items:start;
-      margin-top:18px;
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
     }
-    .vline{background:var(--line); width:1px; height:100%;}
-    .col h3{
-      margin:0 0 10px;
-      font-weight:500;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      font-size:12px;
-      text-align:center;
-      color:#2a2a2a;
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
     }
-    ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.8; font-size:14px;}
-    .packages{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:12px;
-      margin-top:18px;
+
+    .hero-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 32px;
     }
-    .pkg{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px 12px;
-      text-align:center;
-      background:#fff;
+
+    .hero-pills span {
+      display: block;
     }
-    .tag{
-      display:inline-block;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size:10px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      padding:4px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:#333;
-      margin-bottom:10px;
+
+    .btn {
+      display: inline-block;
+      background: var(--btn);
+      color: var(--btn-text);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 50px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .tag.pop{background:#f7efe8; border-color:#e7d6c7;}
-    .pkg h4{
-      margin:6px 0 10px;
-      font-weight:500;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      font-size:12px;
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .price{
-      font-size:20px;
-      margin-top:10px;
-      letter-spacing:1px;
+
+    /* Quote Banner */
+    .quote-banner {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 20px 24px;
+      font-style: italic;
+      font-size: 18px;
+      letter-spacing: 0.5px;
     }
-    .small{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.6;
+
+    /* Sections */
+    .section {
+      padding: 48px 32px;
     }
-    .gridwork{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-      margin-top:18px;
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--ink);
     }
-    .ph{
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:linear-gradient(180deg,#faf7f3,#ffffff);
-      height:140px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#8a7f76;
-      font-size:12px;
-      letter-spacing:2px;
-      text-transform:uppercase;
+
+    .divider {
+      height: 1px;
+      background: var(--line);
     }
-    .aboutrow{
-      display:grid;
-      grid-template-columns: 1.5fr .8fr;
-      gap:18px;
-      align-items:center;
-      margin-top:18px;
-    }
-    .about p{margin:0 0 10px; color:var(--muted); line-height:1.7; font-size:14px;}
-    .avatar{
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:#fff;
-      padding:14px;
-      text-align:center;
-    }
-    .circle{
-      width:86px; height:86px; border-radius:50%;
-      margin:0 auto 10px;
-      border:1px solid var(--line);
-      background:linear-gradient(135deg,#f2ebe4,#ffffff);
-    }
-    .foot{
-      padding:18px 24px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      color:#2a2a2a;
-      font-size:12px;
-      letter-spacing:1px;
-      flex-wrap:wrap;
-      background:#111;
-      color:#fff;
-    }
-    .foot a{color:#fff}
-    .note{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size:11px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      opacity:.85;
-    }
-    .contact{
-      display:grid;
+
+    /* Two Column Layout */
+    .two-col {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:18px;
-      margin-top:18px;
-      align-items:start;
+      gap: 40px;
     }
-    .contact .box{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px;
-      background:#fff;
+
+    .col h3 {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: var(--ink);
     }
-    .contact .box h4{
-      margin:0 0 8px;
-      font-weight:500;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      font-size:12px;
+
+    .col ul {
+      list-style: none;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2;
     }
-    .contact .box p{margin:0; color:var(--muted); line-height:1.7; font-size:14px;}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-    @media (max-width: 900px){
-      .packages{grid-template-columns: repeat(2, 1fr);}
-      .gridwork{grid-template-columns: repeat(2, 1fr);}
-      .aboutrow{grid-template-columns: 1fr;}
-      .twocol{grid-template-columns: 1fr; }
-      .vline{display:none}
-      h1{font-size:28px}
-      .contact{grid-template-columns:1fr}
+
+    .col ul li::before {
+      content: "·";
+      margin-right: 8px;
+      color: var(--accent-dark);
+    }
+
+    /* Packages */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .pkg {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 24px 20px;
+      text-align: center;
+      background: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pkg:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .pkg-tag {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 50px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .pkg-tag.popular {
+      background: #f7efe8;
+      border-color: #e7d6c7;
+      color: var(--accent-dark);
+    }
+
+    .pkg h4 {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pkg-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      min-height: 60px;
+    }
+
+    .pkg-price {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .pkg-unit {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Selected Work */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .work-item {
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, #faf7f3, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .work-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-placeholder {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #b0a090;
+    }
+
+    /* About */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .about-avatar {
+      text-align: center;
+    }
+
+    .avatar-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #f2ebe4, #ffffff);
+      overflow: hidden;
+    }
+
+    .avatar-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Practical Details */
+    .details-list {
+      list-style: none;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 2.2;
+    }
+
+    .details-list li::before {
+      content: "·";
+      margin-right: 10px;
+      color: var(--accent-dark);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      background: #fff;
+    }
+
+    .contact-box h4 {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .contact-box .email {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .contact-box .small {
+      font-size: 13px;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--ink);
+      color: #fff;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-info strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .footer-info span {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+
+    .footer .btn {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .footer .btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .wrap {
+        padding: 24px 16px 40px;
+      }
+
+      .hero {
+        padding: 40px 24px 36px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .section {
+        padding: 36px 24px;
+      }
+
+      .two-col,
+      .packages-grid,
+      .about-content,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pkg-desc {
+        min-height: auto;
+      }
+
+      .footer {
+        padding: 20px 24px;
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -257,39 +482,38 @@
   <div class="wrap">
     <div class="card">
 
-      <div class="section">
-        <div class="topline">Reliable Design & Remote Support for Coaches and Solopreneurs</div>
-        <h1>Reliable Design & Remote Support<br/>for Coaches and Solopreneurs</h1>
-        <p class="sub">
-          I support coaches with brand-consistent design: social media & visual design (Canva or Adobe)
+      <!-- Hero Section -->
+      <section class="hero">
+        <p class="hero-label">Reliable Design & Remote Support for Coaches and Solopreneurs</p>
+        <h1>Reliable Design &<br>Remote Support for<br>Coaches and Solopreneurs</h1>
+        <p class="hero-desc">
+          I support coaches with brand-consistent design · Social media & visual design (Canva or Adobe)
         </p>
-        <div class="pillrow">
-          <span>• Multilingual communication (EN / DE / NL / CH)</span>
-          <span>• Remote collaboration</span>
-          <span>• UTC +7 flexible overlap with Europe, Australia, and U.S. mornings</span>
+        <div class="hero-pills">
+          <span>· Multilingual communication (EN / DE / NL / CH)</span>
+          <span>· Remote collaboration</span>
+          <span>· UTC +7 flexible overlap with Europe, Australia, and U.S. mornings</span>
         </div>
-        <div class="btnrow">
-          <a class="btn" href="#packages">Packages</a>
-        </div>
-      </div>
+        <a class="btn" href="#packages">Packages</a>
+      </section>
 
       <div class="divider"></div>
-      <div class="banner">“Designed with technology. Tuned for humans.”</div>
+      <div class="quote-banner">"Designed with technology. Tuned for humans."</div>
       <div class="divider"></div>
 
-      <div class="section">
-        <h2>What I help you with</h2>
-        <div class="twocol">
+      <!-- What I Help You With -->
+      <section class="section">
+        <h2 class="section-title">What I Help You With</h2>
+        <div class="two-col">
           <div class="col">
             <h3>Graphic Design</h3>
             <ul>
               <li>Social Media Graphics</li>
               <li>Banners & Flyers</li>
               <li>Layouts (PDF / Web)</li>
-              <li>Brand-consistent Visuals</li>
+              <li>Brand-Consistent Visuals</li>
             </ul>
           </div>
-          <div class="vline"></div>
           <div class="col">
             <h3>Remote Support</h3>
             <ul>
@@ -300,123 +524,126 @@
             </ul>
           </div>
         </div>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section" id="packages">
-        <h2>Packages</h2>
-        <div class="packages">
+      <!-- Packages -->
+      <section class="section" id="packages">
+        <h2 class="section-title">Packages</h2>
+        <div class="packages-grid">
           <div class="pkg">
-            <span class="tag">Text Project</span>
-            <h4>Try My Task</h4>
-            <div class="small">A simple way to experience my working style. For coaches who want to test collaboration before committing.</div>
-            <div class="price">17 USD</div>
-            <div class="small">/ hour</div>
+            <span class="pkg-tag">Test Project</span>
+            <h4>1 Hour - Try a Task</h4>
+            <p class="pkg-desc">A simple way to experience my working style. For coaches who want to test collaboration before committing.</p>
+            <div class="pkg-price">17</div>
+            <div class="pkg-unit">USD</div>
           </div>
 
           <div class="pkg">
-            <span class="tag pop">Most Popular</span>
+            <span class="pkg-tag popular">Most Popular</span>
             <h4>Social Media Starter</h4>
-            <div class="small">Consistent social media visuals. Clear and brand-aligned.</div>
-            <div class="price">25 USD</div>
-            <div class="small">10 custom graphics</div>
+            <p class="pkg-desc">Consistent social media visuals. Clear and brand-aligned.</p>
+            <div class="pkg-price">250</div>
+            <div class="pkg-unit">USD · 10 Custom Graphics</div>
           </div>
 
           <div class="pkg">
-            <span class="tag">Ongoing Design Support</span>
+            <span class="pkg-tag">Ongoing Design Support</span>
             <h4>Weekly Support</h4>
-            <div class="small">Reliable weekly design support. Ideal for long-term collaboration.</div>
-            <div class="price">350 USD</div>
-            <div class="small">/ week</div>
+            <p class="pkg-desc">Reliable weekly design support. Ideal for long-term collaboration.</p>
+            <div class="pkg-price">350</div>
+            <div class="pkg-unit">USD / Week</div>
           </div>
 
           <div class="pkg">
-            <span class="tag">Priority Design Support</span>
+            <span class="pkg-tag">Priority Design Support</span>
             <h4>Priority Support</h4>
-            <div class="small">Your tasks are handled first. Ideal for launches, deadlines and high-demand phases.</div>
-            <div class="price">700 USD</div>
-            <div class="small">/ week</div>
+            <p class="pkg-desc">Your tasks are handled first. Ideal for launches, deadlines and high-demand phases.</p>
+            <div class="pkg-price">700</div>
+            <div class="pkg-unit">USD / Week</div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section">
-        <h2>Selected Work</h2>
-        <div class="gridwork">
-          <div class="ph">Project 1</div>
-          <div class="ph">Project 2</div>
-          <div class="ph">Project 3</div>
-          <div class="ph">Project 4</div>
-          <div class="ph">Project 5</div>
-          <div class="ph">Project 6</div>
+      <!-- Selected Work -->
+      <section class="section">
+        <h2 class="section-title">Selected Work</h2>
+        <div class="work-grid">
+          <div class="work-item"><span class="work-placeholder">Project 1</span></div>
+          <div class="work-item"><span class="work-placeholder">Project 2</span></div>
+          <div class="work-item"><span class="work-placeholder">Project 3</span></div>
+          <div class="work-item"><span class="work-placeholder">Project 4</span></div>
+          <div class="work-item"><span class="work-placeholder">Project 5</span></div>
+          <div class="work-item"><span class="work-placeholder">Project 6</span></div>
         </div>
-        <p class="small" style="text-align:center; margin-top:12px;">
-          (Placeholders for now — we’ll replace these with your real portfolio images.)
-        </p>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section">
-        <h2>About</h2>
-        <div class="aboutrow">
-          <div class="about">
+      <!-- About -->
+      <section class="section">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <div class="about-text">
             <p>
-              I’m Eliane — I work with coaches who want consistent visuals and reliable support — without constant back and forth and micromanagement.
+              I'm Eliane — I work with coaches who want consistent visuals and reliable support — without constant back and forth and micromanagement.
             </p>
             <p>
-              I’m a trained graphic designer with combined experience across design and remote collaboration.
+              I'm a trained graphic designer with combined experience across design and remote collaboration.
             </p>
             <p>
               Simple process. Clear scope. Clean output.
             </p>
           </div>
-          <div class="avatar">
-            <div class="circle" aria-hidden="true"></div>
-            <a class="btn" href="#contact">Get in touch</a>
+          <div class="about-avatar">
+            <div class="avatar-circle"></div>
+            <a class="btn" href="#contact">Get in Touch</a>
           </div>
         </div>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section">
-        <h2>Practical Details</h2>
-        <ul>
+      <!-- Practical Details -->
+      <section class="section">
+        <h2 class="section-title">Practical Details</h2>
+        <ul class="details-list">
           <li>Rates: starting at 30 CHF / hour (packages available)</li>
           <li>Timezone: UTC +6 (overlap with Europe)</li>
           <li>Availability: approx. 10–20 hours per week</li>
           <li>Languages: English, German, Dutch, Swiss-German</li>
         </ul>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section" id="contact">
-        <h2>Contact</h2>
-        <div class="contact">
-          <div class="box">
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <div class="contact-box">
             <h4>Email</h4>
-            <p class="mono">eliane.inhomeoffice@gmail.com</p>
+            <p class="email">eliane.inhomeoffice@gmail.com</p>
           </div>
-          <div class="box">
+          <div class="contact-box">
             <h4>Booking</h4>
             <p>For bookings, availability or questions, feel free to reach out.</p>
-            <p class="small" style="margin-top:8px;">Ask for availability</p>
+            <p class="small">Ask for availability</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="foot">
-        <div>
-          <div><strong>Eliane Hougée</strong></div>
-          <div class="note">Graphic Design & Remote Support · EN · DE · NL · CH</div>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-info">
+          <strong>Eliane Hougée</strong>
+          <span>Graphic Design & Remote Support · EN · DE · NL · CH</span>
         </div>
-        <a class="btn" href="#contact">Get in touch</a>
-      </div>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </footer>
 
     </div>
   </div>
