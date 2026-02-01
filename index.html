@@ -21,6 +21,7 @@
             --light-rust: #c87a52;
             --border: #d4cfc8;
             --text-gray: #5a5654;
+            --h1-size: 2rem;
         }
 
         body {
@@ -56,7 +57,7 @@
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
+            font-size: var(--h1-size);
             font-weight: 400;
             letter-spacing: 0.05em;
             margin-bottom: 1.5rem;
@@ -75,36 +76,37 @@
         .hero-meta {
             font-size: 0.8rem;
             color: var(--text-gray);
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem 1.5rem;
+            margin: 0 auto 2rem;
+            list-style: disc;
+            list-style-position: outside;
+            padding-left: 1.2rem;
+            max-width: 520px;
+            text-align: left;
         }
 
-        .hero-meta span::before {
-            content: "• ";
-            margin-right: 0.3rem;
+        .hero-meta li {
+            margin: 0.25rem 0;
         }
 
         .cta-button {
             display: inline-block;
             padding: 0.75rem 2rem;
-            background: var(--dark);
-            color: var(--cream);
+            background: var(--border);
+            color: var(--dark);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             font-size: 0.75rem;
             font-weight: 700;
-            border-radius: 2px;
+            border-radius: 999px;
             transition: all 0.3s ease;
-            border: 2px solid var(--dark);
+            border: 2px solid transparent;
         }
 
         .cta-button:hover {
             background: var(--cream);
             color: var(--dark);
+            border-color: var(--dark);
         }
 
         .tagline {
@@ -114,13 +116,21 @@
             padding: 1rem;
             font-style: italic;
             font-size: 0.95rem;
-            margin-top: 3rem;
+            margin-top: 0;
         }
 
         /* Services Section */
         .services {
             padding: 4rem 2rem;
+            background: var(--cream);
+        }
+
+        .services-card {
             background: white;
+            padding: 2.5rem 2rem;
+            max-width: 980px;
+            margin: 0 auto;
+            border: 1px solid var(--border);
         }
 
         .section-title {
@@ -140,6 +150,11 @@
             gap: 3rem;
             max-width: 900px;
             margin: 0 auto;
+            justify-items: center;
+        }
+
+        .service-column {
+            text-align: left;
         }
 
         .service-column h3 {
@@ -426,10 +441,6 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -465,49 +476,51 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <p class="subtitle">Reliable Design & Remote Support for Coaches and Solopreneurs</p>
+            <!-- <p class="subtitle">Reliable Design & Remote Support for Coaches and Solopreneurs</p> -->
             <h1>RELIABLE DESIGN & REMOTE SUPPORT<br>FOR COACHES AND SOLOPRENEURS</h1>
             <p class="hero-description">I support coaches with brand-consistent design: social media & visual design (Canva or Adobe)</p>
-            <div class="hero-meta">
-                <span>Multilingual communication (EN / DE / NL / CH)</span>
-                <span>Remote collaboration</span>
-                <span>UTC +7 flexible overlap with Europe, Australia, and U.S. mornings</span>
-            </div>
+            <ul class="hero-meta">
+                <li>Multilingual communication (EN / DE / NL / CH)</li>
+                <li>Remote collaboration</li>
+                <li>UTC +7 flexible overlap with Europe, Australia, and U.S. mornings</li>
+            </ul>
             <a href="#packages" class="cta-button">Packages</a>
         </div>
     </section>
 
-    <div class="tagline">
-        <em>"Designed with technology. Tuned for humans."</em>
-    </div>
+
 
     <!-- Services Section -->
     <section class="services">
         <div class="container">
-            <h2 class="section-title">What I Help You With</h2>
-            <div class="services-grid">
-                <div class="service-column">
-                    <h3>Graphic Design</h3>
-                    <ul>
-                        <li>Social Media Graphics</li>
-                        <li>Banners & Flyers</li>
-                        <li>Layouts (PDF / Web)</li>
-                        <li>Brand-consistent Visuals</li>
-                    </ul>
-                </div>
-                <div class="service-column">
-                    <h3>Remote Support</h3>
-                    <ul>
-                        <li>Email Handling & Coordination</li>
-                        <li>Scheduling & Admin Support</li>
-                        <li>Client Communication</li>
-                        <li>Support Tasks for Your Business</li>
-                    </ul>
+            <div class="services-card">
+                <h2 class="section-title">What I Help You With</h2>
+                <div class="services-grid">
+                    <div class="service-column">
+                        <h3>Graphic Design</h3>
+                        <ul>
+                            <li>Social Media Graphics</li>
+                            <li>Banners & Flyers</li>
+                            <li>Layouts (PDF / Web)</li>
+                            <li>Brand-consistent Visuals</li>
+                        </ul>
+                    </div>
+                    <div class="service-column">
+                        <h3>Remote Support</h3>
+                        <ul>
+                            <li>Email Handling & Coordination</li>
+                            <li>Scheduling & Admin Support</li>
+                            <li>Client Communication</li>
+                            <li>Support Tasks for Your Business</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+<div class="tagline">
+      <em>"Designed with technology. Tuned for humans."</em>
+  </div>
     <!-- Packages Section -->
     <section class="packages" id="packages">
         <div class="container">
