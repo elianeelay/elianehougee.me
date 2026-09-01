@@ -353,12 +353,84 @@ footer p{
     .hero{padding-top:64px;}
 }
 
+
+#pw-gate{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:var(--bg, #FFFFFF);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:24px;
+}
+#pw-gate.hidden{display:none;}
+#pw-gate-box{
+  width:100%;
+  max-width:320px;
+  text-align:center;
+}
+#pw-gate-box p{
+  font-size:13px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-soft, #6B6B6B);
+  margin:0 0 18px;
+}
+#pw-gate-form{
+  display:flex;
+  gap:8px;
+}
+#pw-gate-input{
+  flex:1;
+  padding:11px 14px;
+  border:1px solid var(--line, #E7E7E7);
+  border-radius:2px;
+  font-size:15px;
+  font-family:inherit;
+  outline:none;
+  background:#fff;
+  color:var(--ink, #0A0A0A);
+}
+#pw-gate-input:focus{border-color:var(--ink, #0A0A0A);}
+#pw-gate-submit{
+  padding:11px 18px;
+  border:1px solid var(--ink, #0A0A0A);
+  background:var(--ink, #0A0A0A);
+  color:#fff;
+  border-radius:2px;
+  font-size:14px;
+  font-family:inherit;
+  cursor:pointer;
+  transition:opacity 0.15s ease;
+}
+#pw-gate-submit:hover{opacity:0.8;}
+#pw-gate-error{
+  margin-top:12px;
+  font-size:13px;
+  color:#B3261E;
+  min-height:16px;
+}
+body.pw-locked > *:not(#pw-gate){display:none !important;}
+
 </style>
 <style>
   nav.sections a.local-active{color:var(--ink); border-bottom-color:var(--ink);}
 </style>
 </head>
 <body>
+<div id="pw-gate">
+  <div id="pw-gate-box">
+    <p>This site is password protected</p>
+    <form id="pw-gate-form">
+      <input type="password" id="pw-gate-input" placeholder="Password" autocomplete="off" autofocus>
+      <button type="submit" id="pw-gate-submit">Enter</button>
+    </form>
+    <div id="pw-gate-error"></div>
+  </div>
+</div>
+
 
 <header>
   <div class="nav-inner">
@@ -629,6 +701,39 @@ footer p{
       btn.addEventListener('click', function(){
         var isOpen = nav.classList.toggle('open');
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  })();
+</script>
+<script>
+  (function(){
+    var CORRECT = "1029384756";
+    var STORAGE_KEY = "eh_site_auth";
+    var body = document.body;
+
+    if (localStorage.getItem(STORAGE_KEY) === "granted") {
+      var gate = document.getElementById('pw-gate');
+      if (gate) gate.classList.add('hidden');
+    } else {
+      body.classList.add('pw-locked');
+    }
+
+    var form = document.getElementById('pw-gate-form');
+    var input = document.getElementById('pw-gate-input');
+    var errorEl = document.getElementById('pw-gate-error');
+
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if (input.value === CORRECT) {
+          localStorage.setItem(STORAGE_KEY, "granted");
+          document.getElementById('pw-gate').classList.add('hidden');
+          body.classList.remove('pw-locked');
+        } else {
+          errorEl.textContent = "Incorrect password. Please try again.";
+          input.value = "";
+          input.focus();
+        }
       });
     }
   })();
