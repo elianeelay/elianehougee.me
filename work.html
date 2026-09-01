@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Work — Eliane Hougee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --ink:#0A0A0A;
+  --ink-soft:#6B6B6B;
+  --ink-faint:#A6A6A6;
+  --line:#E7E7E7;
+  --surface:#F5F5F5;
+  --focus:#0A0A0A;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
+
+.display{font-family:'Inter', sans-serif;}
+.mono{
+  font-family:'Inter', sans-serif;
+  letter-spacing:0.08em;
+  font-weight:500;
+}
+
+/* ---------- NAV ---------- */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:22px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.wordmark{
+  font-family:'Inter', sans-serif;
+  font-weight:400;
+  font-size:14px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+nav.sections{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+}
+nav.sections a{
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  text-decoration:none;
+  color:var(--ink-faint);
+  padding:4px 0;
+  border-bottom:1px solid transparent;
+  transition:color 0.15s ease, border-color 0.15s ease;
+}
+nav.sections a:hover{color:var(--ink);}
+nav.sections a.active{color:var(--ink); border-bottom-color:var(--ink);}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:8px;
+  margin:-8px;
+}
+.menu-toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:var(--ink);
+  margin:5px 0;
+  transition:transform 0.2s ease, opacity 0.2s ease;
+}
+@media (max-width:640px){
+  .menu-toggle{display:block;}
+  nav.sections{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    gap:0;
+    order:3;
+  }
+  nav.sections.open{display:flex;}
+  nav.sections a{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{position:relative;}
+}
+
+
+/* ---------- HERO ---------- */
+.hero{
+  max-width:1180px;
+  margin:0 auto;
+  padding:100px 28px 80px;
+}
+.hero-eyebrow{
+  font-size:12px;
+  color:var(--ink-faint);
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+h1.title{
+  font-family:'Inter', sans-serif;
+  font-weight:700;
+  font-size:clamp(40px, 6.4vw, 72px);
+  line-height:1.03;
+  letter-spacing:-0.02em;
+  margin:0 0 26px;
+  max-width:16ch;
+}
+.hero-lede{
+  font-size:17px;
+  line-height:1.65;
+  color:var(--ink-soft);
+  max-width:56ch;
+  margin:0;
+}
+.hero-lede strong{color:var(--ink); font-weight:600;}
+.hero-meta{
+  margin-top:48px;
+  display:flex;
+  gap:48px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--ink-faint);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+.hero-meta b{
+  display:block;
+  color:var(--ink);
+  font-size:22px;
+  font-family:'Inter',sans-serif;
+  text-transform:none;
+  letter-spacing:normal;
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+/* ---------- SECTION ---------- */
+section.work-section{
+  max-width:1180px;
+  margin:0 auto;
+  padding:64px 28px 48px;
+  border-top:1px solid var(--line);
+}
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+  margin-bottom:44px;
+}
+.section-num{
+  font-size:12.5px;
+  color:var(--ink-faint);
+  margin-bottom:10px;
+  display:block;
+  letter-spacing:0.06em;
+}
+h2.section-title{
+  font-family:'Inter', sans-serif;
+  font-size:clamp(26px,3.4vw,34px);
+  font-weight:700;
+  letter-spacing:-0.01em;
+  margin:0 0 10px;
+}
+.section-note{
+  color:var(--ink-soft);
+  font-size:14.5px;
+  max-width:52ch;
+  line-height:1.55;
+  margin:0;
+}
+.section-link{
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+  white-space:nowrap;
+}
+
+/* ---------- ABOUT ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:56px;
+  align-items:start;
+}
+.about-photo{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:var(--surface);
+}
+.about-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 15%;
+  display:block;
+}
+.about-text .section-title{margin-top:2px;}
+@media (max-width:640px){
+  .about-grid{grid-template-columns:1fr; gap:28px;}
+  .about-photo{max-width:180px;}
+}
+.about-photo.large{aspect-ratio:4/5;}
+
+/* ---------- CARD GRID ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.card{
+  background:var(--bg);
+  padding:0 0 24px;
+}
+.thumb{
+  aspect-ratio:4/3;
+  margin-bottom:20px;
+  background:var(--surface);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.thumb span{
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.card-body{padding:0 22px;}
+.card-top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:6px;
+}
+.card-title{
+  font-family:'Inter', sans-serif;
+  font-size:17px;
+  font-weight:700;
+  margin:0;
+  line-height:1.3;
+  letter-spacing:-0.005em;
+}
+.card-tag{
+  font-size:10.5px;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--ink-faint);
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.card-meta{
+  font-size:12px;
+  color:var(--ink-faint);
+  letter-spacing:0.02em;
+  margin:0 0 12px;
+}
+.card-desc{
+  font-size:13.5px;
+  line-height:1.6;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  max-width:1180px;
+  margin:0 auto;
+  padding:72px 28px 100px;
+  border-top:1px solid var(--line);
+}
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:24px;
+}
+footer h3{
+  font-family:'Inter', sans-serif;
+  font-size:20px;
+  font-weight:700;
+  margin:0 0 10px;
+  letter-spacing:-0.01em;
+}
+footer p{
+  color:var(--ink-soft);
+  margin:0;
+  max-width:40ch;
+  font-size:14px;
+  line-height:1.55;
+}
+.footer-links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  text-decoration:none;
+  border:1px solid var(--ink);
+  padding:12px 18px;
+  transition:background 0.15s ease, color 0.15s ease;
+}
+.footer-links a:hover{background:var(--ink); color:var(--bg);}
+
+@media (max-width:640px){
+    .hero{padding-top:64px;}
+}
+
+</style>
+<style>
+  nav.sections a.local-active{color:var(--ink); border-bottom-color:var(--ink);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark">Eliane Hougee</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="sections" id="sectionNav">
+      <a href="work.html" class="local-active">My Work</a>
+      <a href="about.html">About Me</a>
+      <a href="cv.html" id="cvLink">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero" style="padding-bottom:56px;">
+    <p class="hero-eyebrow mono">My Work — 20 years, with gaps</p>
+    <h1 class="title display" style="font-size:clamp(34px,5vw,52px);">The full archive.</h1>
+    <p class="hero-lede">Agency work, freelance jobs, private clients, personal projects, and experiments —
+      everything, not just the best of it.</p>
+  </div>
+
+  <!-- AGENCY -->
+  <section class="work-section" id="agency">
+    <div class="section-head">
+      <div>
+        <span class="section-num mono">01</span>
+        <h2 class="section-title display">Agency Work</h2>
+        <p class="section-note">Projects made in-house at advertising agencies.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Shipped</span>
+          </div>
+          <p class="card-meta">Client — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Shipped</span>
+          </div>
+          <p class="card-meta">Client — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Shipped</span>
+          </div>
+          <p class="card-meta">Client — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREELANCE -->
+  <section class="work-section" id="freelance">
+    <div class="section-head">
+      <div>
+        <span class="section-num mono">02</span>
+        <h2 class="section-title display">Freelance for Agencies</h2>
+        <p class="section-note">Contract work done for other agencies, under their roof.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Freelance</span>
+          </div>
+          <p class="card-meta">Agency — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Freelance</span>
+          </div>
+          <p class="card-meta">Agency — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Freelance</span>
+          </div>
+          <p class="card-meta">Agency — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVATE CLIENTS -->
+  <section class="work-section" id="private">
+    <div class="section-head">
+      <div>
+        <span class="section-num mono">03</span>
+        <h2 class="section-title display">Working for Private Clients</h2>
+        <p class="section-note">Direct work for private clients, outside of an agency structure.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Direct</span>
+          </div>
+          <p class="card-meta">Client — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Direct</span>
+          </div>
+          <p class="card-meta">Client — Year</p>
+          <p class="card-desc">One line on what it was, your role, and what you actually did.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section class="work-section" id="personal">
+    <div class="section-head">
+      <div>
+        <span class="section-num mono">04</span>
+        <h2 class="section-title display">Personal Projects</h2>
+        <p class="section-note">Self-initiated work — nobody's brief but your own.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Personal</span>
+          </div>
+          <p class="card-meta">Self-initiated — Year</p>
+          <p class="card-desc">One line on what it was and why you made it.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Project title</h3>
+            <span class="card-tag">Personal</span>
+          </div>
+          <p class="card-meta">Self-initiated — Year</p>
+          <p class="card-desc">One line on what it was and why you made it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIMENTS -->
+  <section class="work-section" id="experiments">
+    <div class="section-head">
+      <div>
+        <span class="section-num mono">05</span>
+        <h2 class="section-title display">Experiments</h2>
+        <p class="section-note">Free play — testing a technique, a tool, or an idea with no client and no
+          stakes.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Experiment title</h3>
+            <span class="card-tag">Experiment</span>
+          </div>
+          <p class="card-meta">Year</p>
+          <p class="card-desc">One line on what you were testing.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Experiment title</h3>
+            <span class="card-tag">Experiment</span>
+          </div>
+          <p class="card-meta">Year</p>
+          <p class="card-desc">One line on what you were testing.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>Image</span></div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <h3 class="card-title">Experiment title</h3>
+            <span class="card-tag">Experiment</span>
+          </div>
+          <p class="card-meta">Year</p>
+          <p class="card-desc">One line on what you were testing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3 class="display">Let's talk</h3>
+        <p>Have a question, or just want to say hi? Feel free to reach out directly — I'd love to hear
+          from you, even for a casual exchange.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:eliane.inhomeoffice@gmail.com">Email</a>
+        <a href="cv.html">CV</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  const links = document.querySelectorAll('#sectionNav a');
+  const sections = document.querySelectorAll('section.work-section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.classList.contains('local-active')));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+<script>
+  (function(){
+    var btn = document.getElementById('menuToggle');
+    var nav = document.getElementById('sectionNav');
+    if(btn && nav){
+      btn.addEventListener('click', function(){
+        var isOpen = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  })();
+</script>
+</body>
+</html>
