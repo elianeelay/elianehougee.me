@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="noindex, nofollow" name="robots"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Work — Eliane Hougee</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#FFFFFF;
+  --ink:#0A0A0A;
+  --ink-soft:#6B6B6B;
+  --ink-faint:#A6A6A6;
+  --line:#E7E7E7;
+  --surface:#F5F5F5;
+  --focus:#0A0A0A;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
+
+.display{font-family:'Inter', sans-serif;}
+.mono{
+  font-family:'Inter', sans-serif;
+  letter-spacing:0.08em;
+  font-weight:500;
+}
+
+/* ---------- NAV ---------- */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:22px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.wordmark{
+  font-family:'Inter', sans-serif;
+  font-weight:400;
+  font-size:14px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+nav.sections{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+}
+nav.sections a{
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  text-decoration:none;
+  color:var(--ink-faint);
+  padding:4px 0;
+  border-bottom:1px solid transparent;
+  transition:color 0.15s ease, border-color 0.15s ease;
+}
+nav.sections a:hover{color:var(--ink);}
+nav.sections a.active{color:var(--ink); border-bottom-color:var(--ink);}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:8px;
+  margin:-8px;
+}
+.menu-toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:var(--ink);
+  margin:5px 0;
+  transition:transform 0.2s ease, opacity 0.2s ease;
+}
+@media (max-width:640px){
+  .menu-toggle{display:block;}
+  nav.sections{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    gap:0;
+    order:3;
+  }
+  nav.sections.open{display:flex;}
+  nav.sections a{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{position:relative;}
+}
+
+
+/* ---------- HERO ---------- */
+.hero{
+  max-width:1180px;
+  margin:0 auto;
+  padding:100px 28px 80px;
+}
+.hero-eyebrow{
+  font-size:12px;
+  color:var(--ink-faint);
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+h1.title{
+  font-family:'Inter', sans-serif;
+  font-weight:700;
+  font-size:clamp(40px, 6.4vw, 72px);
+  line-height:1.03;
+  letter-spacing:-0.02em;
+  margin:0 0 26px;
+  max-width:16ch;
+}
+.hero-lede{
+  font-size:17px;
+  line-height:1.65;
+  color:var(--ink-soft);
+  max-width:56ch;
+  margin:0;
+}
+.hero-lede strong{color:var(--ink); font-weight:600;}
+.hero-meta{
+  margin-top:48px;
+  display:flex;
+  gap:48px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--ink-faint);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+.hero-meta b{
+  display:block;
+  color:var(--ink);
+  font-size:22px;
+  font-family:'Inter',sans-serif;
+  text-transform:none;
+  letter-spacing:normal;
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+/* ---------- SECTION ---------- */
+section.work-section{
+  max-width:1180px;
+  margin:0 auto;
+  padding:64px 28px 48px;
+  border-top:1px solid var(--line);
+}
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+  margin-bottom:44px;
+}
+.section-num{
+  font-size:12.5px;
+  color:var(--ink-faint);
+  margin-bottom:10px;
+  display:block;
+  letter-spacing:0.06em;
+}
+h2.section-title{
+  font-family:'Inter', sans-serif;
+  font-size:clamp(26px,3.4vw,34px);
+  font-weight:700;
+  letter-spacing:-0.01em;
+  margin:0 0 10px;
+}
+.section-note{
+  color:var(--ink-soft);
+  font-size:14.5px;
+  max-width:52ch;
+  line-height:1.55;
+  margin:0;
+}
+.section-link{
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+  white-space:nowrap;
+}
+
+/* ---------- ABOUT ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:56px;
+  align-items:start;
+}
+.about-photo{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:var(--surface);
+}
+.about-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 15%;
+  display:block;
+}
+.about-text .section-title{margin-top:2px;}
+@media (max-width:640px){
+  .about-grid{grid-template-columns:1fr; gap:28px;}
+  .about-photo{max-width:180px;}
+}
+.about-photo.large{aspect-ratio:4/5;}
+
+/* ---------- CARD GRID ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:1px;
+  background:transparent;
+  border:none;
+}
+.card{
+  background:var(--bg);
+  padding:0 0 24px;
+  border:none;
+  cursor:pointer;
+  transition:opacity 0.15s ease;
+}
+.card:hover{
+  opacity:0.75;
+}
+.thumb{
+  aspect-ratio:4/3;
+  margin-bottom:20px;
+  background:var(--surface);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.thumb span{
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.card-body{padding:0 22px;}
+.card-top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:6px;
+}
+.card-title{
+  font-family:'Inter', sans-serif;
+  font-size:17px;
+  font-weight:700;
+  margin:0;
+  line-height:1.3;
+  letter-spacing:-0.005em;
+}
+.card-tag{
+  font-size:10.5px;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--ink-faint);
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.card-meta{
+  font-size:12px;
+  color:var(--ink-faint);
+  letter-spacing:0.02em;
+  margin:0 0 12px;
+}
+.card-desc{
+  font-size:13.5px;
+  line-height:1.6;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  max-width:1180px;
+  margin:0 auto;
+  padding:72px 28px 100px;
+  border-top:1px solid var(--line);
+}
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:24px;
+}
+footer h3{
+  font-family:'Inter', sans-serif;
+  font-size:20px;
+  font-weight:700;
+  margin:0 0 10px;
+  letter-spacing:-0.01em;
+}
+footer p{
+  color:var(--ink-soft);
+  margin:0;
+  max-width:40ch;
+  font-size:14px;
+  line-height:1.55;
+}
+.footer-links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  text-decoration:none;
+  border:1px solid var(--ink);
+  padding:12px 18px;
+  transition:background 0.15s ease, color 0.15s ease;
+}
+.footer-links a:hover{background:var(--ink); color:var(--bg);}
+
+@media (max-width:640px){
+    .hero{padding-top:64px;}
+}
+
+
+#pw-gate{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:var(--bg, #FFFFFF);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:24px;
+}
+#pw-gate.hidden{display:none;}
+#pw-gate-box{
+  width:100%;
+  max-width:320px;
+  text-align:center;
+}
+#pw-gate-box p{
+  font-size:13px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-soft, #6B6B6B);
+  margin:0 0 18px;
+}
+#pw-gate-form{
+  display:flex;
+  gap:8px;
+}
+#pw-gate-input{
+  flex:1;
+  padding:11px 14px;
+  border:1px solid var(--line, #E7E7E7);
+  border-radius:2px;
+  font-size:15px;
+  font-family:inherit;
+  outline:none;
+  background:#fff;
+  color:var(--ink, #0A0A0A);
+}
+#pw-gate-input:focus{border-color:var(--ink, #0A0A0A);}
+#pw-gate-submit{
+  padding:11px 18px;
+  border:1px solid var(--ink, #0A0A0A);
+  background:var(--ink, #0A0A0A);
+  color:#fff;
+  border-radius:2px;
+  font-size:14px;
+  font-family:inherit;
+  cursor:pointer;
+  transition:opacity 0.15s ease;
+}
+#pw-gate-submit:hover{opacity:0.8;}
+#pw-gate-error{
+  margin-top:12px;
+  font-size:13px;
+  color:#B3261E;
+  min-height:16px;
+}
+body.pw-locked > *:not(#pw-gate){display:none !important;}
+
+
+/* ---------- RUBRIC TABS ---------- */
+.rubric-tabs{
+  display:flex;
+  gap:4px;
+  border-bottom:1px solid var(--line);
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.rubric-tab{
+  background:none;
+  border:none;
+  font-family:'Inter', sans-serif;
+  font-size:14px;
+  letter-spacing:0.01em;
+  color:var(--ink-soft);
+  padding:14px 18px;
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+  white-space:nowrap;
+  transition:color 0.15s ease;
+}
+.rubric-tab:hover{color:var(--ink);}
+.rubric-tab.active{color:var(--ink); border-bottom-color:var(--ink); font-weight:600;}
+@media (max-width:640px){
+  .rubric-tab{padding:12px 14px; font-size:13.5px;}
+}
+
+
+/* ---------- DRAG TO REORDER ---------- */
+.card{ cursor: grab; }
+.card:active{ cursor: grabbing; }
+.card.dragging{ opacity: 0.4; }
+.card.drag-over{ outline: 2px dashed var(--ink); outline-offset: -2px; }
+.reorder-hint{
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+  margin: 0 0 14px;
+}
+
+
+/* ---------- PROJECT DETAIL MODAL ---------- */
+.project-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+.project-modal.open{ display: block; }
+.project-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.72);
+}
+.project-modal-panel{
+  position: relative;
+  max-width: 900px;
+  width: 92%;
+  max-height: 88vh;
+  margin: 6vh auto;
+  background: var(--bg, #fff);
+  border-radius: 3px;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+.project-modal-close{
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: 14px 14px 0 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+.project-modal-images{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.project-modal-images img{
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.project-modal-image-row{
+  display: flex;
+  gap: 2px;
+}
+.project-modal-image-row img{
+  width: 50%;
+  display: block;
+  object-fit: cover;
+}
+.project-modal-body{
+  padding: 8px 32px 32px;
+}
+.project-modal-title{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  margin: 10px 0 6px;
+}
+.project-modal-meta{
+  color: var(--ink-soft, #6B6B6B);
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+.project-modal-text{
+  font-size: 15.5px;
+  line-height: 1.65;
+  max-width: 62ch;
+  white-space: pre-line;
+}
+.project-modal-link{
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+}
+.card{ cursor: pointer; }
+@media (max-width:640px){
+  .project-modal-panel{ margin: 3vh auto; max-height: 94vh; }
+  .project-modal-body{ padding: 20px 20px 32px; }
+}
+
+</style>
+<style>
+  nav.sections a.local-active{color:var(--ink); border-bottom-color:var(--ink);}
+</style>
+<style>
+.lang-switch{display:flex;align-items:center;gap:7px;margin-left:20px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;}
+.lang-switch a{color:var(--ink-soft);text-decoration:none;}
+.lang-switch a.lang-active{color:var(--ink);font-weight:600;}
+.lang-switch a:hover{color:var(--ink);}
+@media(max-width:640px){.lang-switch{margin-left:0;}}
+</style>
+<script>
+(function(){
+  var CURRENT = "en";
+  var KEY = "eh_language_manual";
+  function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var links = document.querySelectorAll('.lang-switch a[data-lang]');
+    links.forEach(function(a){
+      a.addEventListener('click', function(){
+        set(KEY, a.getAttribute('data-lang'));
+      });
+    });
+
+    var manual = get(KEY);
+    if (!manual) {
+      var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"])
+        .map(function(x){return (x||"").toLowerCase();});
+      var preferred = langs.some(function(x){return x.indexOf("de")===0;}) ? "de" : "en";
+      var dest = preferred === "de" ? "work-de.html" : "work.html";
+      if (preferred !== CURRENT && location.pathname.split('/').pop() !== dest) {
+        location.replace(dest);
+      }
+    }
+  });
+})();
+</script>
+</head>
+<body>
+<div id="pw-gate">
+<div id="pw-gate-box">
+<p>This site is password protected</p>
+<form id="pw-gate-form">
+<input autocomplete="off" autofocus="" id="pw-gate-input" placeholder="Password" type="password"/>
+<button id="pw-gate-submit" type="submit">Enter</button>
+</form>
+<div id="pw-gate-error"></div>
+</div>
+</div>
+<header>
+<div class="nav-inner">
+<a class="wordmark" href="index.html">Eliane Hougee</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuToggle">
+<span></span><span></span><span></span>
+</button>
+<nav class="sections" id="sectionNav">
+<a class="local-active" href="work.html">My Work</a>
+<a href="about.html">About Me</a>
+<a href="cv.html" id="cvLink">CV</a>
+</nav>
+<div aria-label="Language" class="lang-switch"><a class="lang-active" data-lang="en" href="work.html">EN</a><span>/</span><a data-lang="de" href="work-de.html">DE</a></div>
+</div>
+</header>
+<main id="top">
+<div class="hero" style="padding-bottom:32px;">
+<p class="hero-eyebrow mono">My Work</p>
+<h1 class="title display" style="font-size:clamp(34px,5vw,52px);">Design, illustration, and things built for the web.</h1>
+</div>
+<div class="tabs-wrap" style="max-width:1180px; margin:0 auto; padding:0 28px;">
+<div class="rubric-tabs" role="tablist">
+<button aria-selected="true" class="rubric-tab active" data-target="branding" role="tab">Branding</button>
+<button aria-selected="false" class="rubric-tab" data-target="packaging" role="tab">Packaging</button>
+<button aria-selected="false" class="rubric-tab" data-target="presentation" role="tab">Presentation Design</button>
+<button aria-selected="false" class="rubric-tab" data-target="webdesign" role="tab">Webdesign</button>
+<button aria-selected="false" class="rubric-tab" data-target="illustration" role="tab">Illustration</button>
+</div>
+</div>
+<!-- BRANDING -->
+<section class="work-section rubric-panel" data-panel="" id="branding" style="border-top:none; padding-top:40px;">
+<div class="grid">
+<div class="card" draggable="true">
+<div class="thumb"><img alt="Soundgate Instruments logo embossed on paper" src="images/image-01.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Soundgate Instruments</h3>
+<span class="card-tag">Brand Identity</span>
+</div>
+<p class="card-meta">Remote — 2025</p>
+<p class="card-desc">A hand-drawn emblem for a handcrafted sound-chair maker — a resting figure held within a crescent, built anchor point by anchor point to match the craftsmanship of the instruments themselves.</p>
+</div>
+</div>
+<div class="card" draggable="true">
+<div class="thumb"><img alt="Autohaus Meier brand identity and stationery" src="images/image-02.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Autohaus Meier</h3>
+<span class="card-tag">Brand Identity</span>
+</div>
+<p class="card-meta">2024</p>
+<p class="card-desc">A car dealership emblem built entirely from engine and automotive parts, arranged into the silhouette of a headlight — carried through business cards, stationery and packaging.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- PACKAGING -->
+<section class="work-section rubric-panel" data-panel="" id="packaging" style="display:none; border-top:none; padding-top:40px;">
+<div class="grid"> <div class="card" draggable="true">
+<div class="thumb"><img alt="Nøra Mushroom Coffee packaging" src="images/image-03.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Nøra Mushroom Coffee</h3>
+<span class="card-tag">Packaging Design</span>
+</div>
+<p class="card-meta">Self-initiated concept — 2026</p>
+<p class="card-desc">A playful, illustrated visual world of eyes, mushrooms, snakes and moons — making ritual and mindfulness tangible and approachable, without looking like it belongs on an esoterics shelf.</p>
+</div>
+</div>
+<div class="card" id="aveo" draggable="true">
+<div class="thumb"><img alt="AVEO supplement bottle system" src="images/image-04.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">AVEO — Supplement System</h3>
+<span class="card-tag">Packaging Design</span>
+</div>
+<p class="card-meta">2026</p>
+<p class="card-desc">A scalable packaging architecture for a growing supplement range, inspired by the periodic table — large codes replace excessive labelling, keeping a wide product family instantly recognisable.</p>
+</div>
+</div>
+<div class="card" draggable="true">
+<div class="thumb"><img alt="Lunar Tide meditation candle ritual set" src="images/image-05.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Lunar Tide</h3>
+<span class="card-tag">Packaging &amp; Illustration</span>
+</div>
+<p class="card-meta">Self-initiated concept — 2024</p>
+<p class="card-desc">A meditation candle ritual for teenagers — holographic foil, playful typography and expressive illustration make mindfulness approachable rather than serious. Self-initiated concept combining packaging design with original illustration work.</p>
+</div>
+</div>
+<div class="card" draggable="true">
+<div class="thumb"><img alt="SCHÜWO Swiss mineral water bottle" src="images/image-06.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">SCHÜWO</h3>
+<span class="card-tag">Packaging Design</span>
+</div>
+<p class="card-meta">Self-initiated concept — 2026</p>
+<p class="card-desc">A concept redesign for an existing Swiss mineral water brand — replacing decorative packaging with type printed directly onto clear glass, so the water itself becomes the product.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- PRESENTATION DESIGN -->
+<section class="work-section rubric-panel" data-panel="" id="presentation" style="display:none; border-top:none; padding-top:40px;">
+<div class="grid">
+<div class="card" draggable="true">
+<div class="thumb"><img alt="BLOC Group presentation slide" src="images/image-07.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">BLOC Group</h3>
+<span class="card-tag">Presentation Design</span>
+</div>
+<p class="card-meta">2023</p>
+<p class="card-desc">Originally designed as a printed annual report for a real client, this project was later reimagined as a presentation system — exploring how the same content and identity could work in a pitch or meeting context.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ILLUSTRATION -->
+<section class="work-section rubric-panel" data-panel="" id="webdesign" style="display:none; border-top:none; padding-top:40px;">
+<div class="grid">
+<div class="card" draggable="true">
+<div class="thumb"><img alt="nael.agency homepage" src="images/image-18.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">nael.agency</h3>
+<span class="card-tag">Website</span>
+</div>
+<p class="card-meta">Self-initiated — 2026</p>
+<p class="card-desc">Design studio site for packaging, corporate design and presentation work. Built independently, combining design decisions with AI-assisted development.</p>
+</div>
+</div>
+<div class="card" draggable="true">
+<div class="thumb"><img alt="cleanframe.ch homepage" src="images/image-19.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">cleanframe.ch</h3>
+<span class="card-tag">Website</span>
+</div>
+<p class="card-meta">Design &amp; build — 2026</p>
+<p class="card-desc">A clean, professional website template — built independently, combining design decisions with AI-assisted development.</p>
+</div>
+</div>
+</div>
+</section><section class="work-section rubric-panel" data-panel="" id="illustration" style="display:none; border-top:none; padding-top:40px;">
+<div class="grid">
+<div class="card" draggable="true">
+<div class="thumb"><img alt="Lotus Woman illustration" src="images/illustration-01.jpg" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Lotus Woman</h3>
+<span class="card-tag">Illustration</span>
+</div>
+<p class="card-meta">Digital illustration — earlier creative period</p>
+<p class="card-desc"></p>
+</div>
+</div><div class="card" draggable="true">
+<div class="thumb"><img alt="Galaxy Hair illustration" src="images/illustration-02.jpg" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Galaxy Hair</h3>
+<span class="card-tag">Illustration</span>
+</div>
+<p class="card-meta">Digital illustration — earlier creative period</p>
+<p class="card-desc"></p>
+</div>
+</div><div class="card" draggable="true">
+<div class="thumb"><img alt="Whale &amp; Cosmic Hair illustration" src="images/illustration-03.jpg" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Whale &amp; Cosmic Hair</h3>
+<span class="card-tag">Illustration</span>
+</div>
+<p class="card-meta">Digital illustration — earlier creative period</p>
+<p class="card-desc"></p>
+</div>
+</div><div class="card" draggable="true">
+<div class="thumb"><img alt="Ocean Wave illustration" src="images/illustration-04.jpg" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Ocean Wave</h3>
+<span class="card-tag">Illustration</span>
+</div>
+<p class="card-meta">Digital illustration — earlier creative period</p>
+<p class="card-desc"></p>
+</div>
+</div><div class="card" draggable="true">
+<div class="thumb"><img alt="White Hair &amp; Birds illustration" src="images/illustration-05.jpg" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">White Hair &amp; Birds</h3>
+<span class="card-tag">Illustration</span>
+</div>
+<p class="card-meta">Digital illustration — earlier creative period</p>
+<p class="card-desc"></p>
+</div>
+</div><div class="card" draggable="true">
+<div class="thumb"><img alt="Lunar Tide planets illustration" src="images/lunar-tide-planets.webp" style="width:100%; height:100%; object-fit:cover;"/></div>
+<div class="card-body">
+<div class="card-top-row">
+<h3 class="card-title">Lunar Tide</h3>
+<span class="card-tag">Illustration</span>
+</div>
+<p class="card-meta">Digital illustration — also featured in Lunar Tide</p>
+<p class="card-desc"></p>
+</div>
+</div></div>
+</section>
+<!-- WEBDESIGN -->
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3 class="display">Let's talk</h3>
+<p>Have a question, or just want to say hi? Feel free to reach out directly — I'd love to hear
+          from you, even for a casual exchange.</p>
+</div>
+<div class="footer-links">
+<a href="mailto:eliane.inhomeoffice@gmail.com">Email</a>
+<a href="cv.html">CV</a>
+</div>
+</div>
+</footer>
+<!-- PROJECT DETAIL MODAL -->
+<div aria-hidden="true" class="project-modal" id="projectModal">
+<div class="project-modal-backdrop"></div>
+<div class="project-modal-panel">
+<button aria-label="Close" class="project-modal-close" id="projectModalClose">×</button>
+<div class="project-modal-body">
+<span class="card-tag" id="projectModalTag"></span>
+<h2 class="project-modal-title" id="projectModalTitle"></h2>
+<p class="project-modal-meta" id="projectModalMeta"></p>
+<p class="project-modal-text" id="projectModalText"></p>
+<a class="project-modal-link" href="#" id="projectModalLink" rel="noopener" style="display:none;" target="_blank"></a>
+</div>
+<div class="project-modal-images" id="projectModalImages"></div>
+</div>
+</div>
+</main>
+<script>
+  const links = document.querySelectorAll('#sectionNav a');
+  const sections = document.querySelectorAll('section.work-section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.classList.contains('local-active')));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  sections.forEach(s => observer.observe(s));
+</script>
+<script>
+  (function(){
+    var btn = document.getElementById('menuToggle');
+    var nav = document.getElementById('sectionNav');
+    if(btn && nav){
+      btn.addEventListener('click', function(){
+        var isOpen = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  })();
+</script>
+<script>
+  (function(){
+    var ENABLED = true;
+    var CORRECT = "1029384756";
+    var STORAGE_KEY = "eh_site_auth";
+    var body = document.body;
+
+    function safeGet(key){
+      try { return localStorage.getItem(key); } catch(e) { return null; }
+    }
+    function safeSet(key, value){
+      try { localStorage.setItem(key, value); } catch(e) { /* ignore */ }
+    }
+
+    if (!ENABLED) {
+      var gateOff = document.getElementById('pw-gate');
+      if (gateOff) gateOff.classList.add('hidden');
+    } else if (safeGet(STORAGE_KEY) === "granted") {
+      var gate = document.getElementById('pw-gate');
+      if (gate) gate.classList.add('hidden');
+    } else {
+      body.classList.add('pw-locked');
+    }
+
+    var form = document.getElementById('pw-gate-form');
+    var input = document.getElementById('pw-gate-input');
+    var errorEl = document.getElementById('pw-gate-error');
+
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if (input.value === CORRECT) {
+          safeSet(STORAGE_KEY, "granted");
+          document.getElementById('pw-gate').classList.add('hidden');
+          body.classList.remove('pw-locked');
+        } else {
+          errorEl.textContent = "Incorrect password. Please try again.";
+          input.value = "";
+          input.focus();
+        }
+      });
+    }
+  })();
+</script>
+<script>
+  (function(){
+    var tabs = document.querySelectorAll('.rubric-tab');
+    var panels = document.querySelectorAll('[data-panel]');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        tabs.forEach(function(t){ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected','true');
+        var target = tab.getAttribute('data-target');
+        panels.forEach(function(p){
+          p.style.display = (p.id === target) ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
+<script>
+  (function(){
+    function safeGet(key){
+      try { return localStorage.getItem(key); } catch(e) { return null; }
+    }
+    function safeSet(key, value){
+      try { localStorage.setItem(key, value); } catch(e) { /* ignore */ }
+    }
+
+    var grids = document.querySelectorAll('.grid');
+    var dragged = null;
+
+    grids.forEach(function(grid, gridIndex){
+      var panel = grid.closest('[data-panel]');
+      var storageKey = 'eh_card_order_' + (panel ? panel.id : 'grid-' + gridIndex);
+
+      // Restore saved order on load
+      var savedOrder = safeGet(storageKey);
+      if (savedOrder) {
+        try {
+          var titles = JSON.parse(savedOrder);
+          var cards = Array.prototype.slice.call(grid.children);
+          titles.forEach(function(title){
+            var match = cards.find(function(c){
+              var t = c.querySelector('.card-title');
+              return t && t.textContent === title;
+            });
+            if (match) grid.appendChild(match);
+          });
+        } catch(e) { /* ignore malformed data */ }
+      }
+
+      function saveOrder(){
+        var titles = Array.prototype.slice.call(grid.children).map(function(c){
+          var t = c.querySelector('.card-title');
+          return t ? t.textContent : '';
+        });
+        safeSet(storageKey, JSON.stringify(titles));
+      }
+
+      grid.addEventListener('dragstart', function(e){
+        var card = e.target.closest('.card');
+        if (!card) return;
+        dragged = card;
+        card.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      grid.addEventListener('dragend', function(e){
+        var card = e.target.closest('.card');
+        if (card) card.classList.remove('dragging');
+        grid.querySelectorAll('.drag-over').forEach(function(c){ c.classList.remove('drag-over'); });
+        saveOrder();
+      });
+
+      grid.addEventListener('dragover', function(e){
+        e.preventDefault();
+        var target = e.target.closest('.card');
+        if (!target || target === dragged) return;
+        grid.querySelectorAll('.drag-over').forEach(function(c){ c.classList.remove('drag-over'); });
+        target.classList.add('drag-over');
+      });
+
+      grid.addEventListener('drop', function(e){
+        e.preventDefault();
+        var target = e.target.closest('.card');
+        if (!target || !dragged || target === dragged) return;
+        var cards = Array.prototype.slice.call(grid.children);
+        var draggedIdx = cards.indexOf(dragged);
+        var targetIdx = cards.indexOf(target);
+        if (draggedIdx < targetIdx) {
+          target.after(dragged);
+        } else {
+          target.before(dragged);
+        }
+        target.classList.remove('drag-over');
+      });
+    });
+  })();
+</script>
+<script>
+  (function(){
+    // Extra images per project (beyond the main card image), and expanded text where available
+    var projectExtras = {
+      "Autohaus Meier": {
+        extraImages: [
+          "images/image-20.webp",
+          "images/image-21.webp"
+        ],
+        fullText: "A Mechanical Identity in Motion.\n\nAutohaus Meier was approached as an opportunity to rethink the visual language of a traditional automotive business. Rather than using the familiar visual shorthand of cars, road symbols, or vehicle silhouettes, the redesign explores a more distinctive connection to the mechanics behind the automobile.\n\nThe central idea was to build the mark from the language of automotive engineering itself. Gears, pistons, brake components, steering elements, tools, and other mechanical forms were reduced to their essential shapes and assembled into one continuous composition. Individually recognisable parts become something new when viewed as a whole, creating a symbol that feels both constructed and immediately connected to the automotive world.\n\nThe composition was deliberately kept monochromatic and highly graphic. Strong contrast allows the individual components to remain legible while giving the overall mark a bold silhouette that works at different scales. The directional shape also introduces a subtle sense of movement, adding energy to an identity built around machinery and precision.\n\nThe wordmark follows the same principle of reduction. Customised geometric letterforms give AUTOHAUS MEIER a distinctive presence while creating a visual relationship between the typography and the constructed character of the symbol. Together, the two elements form an identity that feels technical and contemporary without relying on conventional automotive imagery.\n\nThe result is an exploratory automotive identity built around the visual language of mechanics rather than the automobile itself. By turning familiar components into a single graphic system, the redesign gives Autohaus Meier a more ownable and characterful visual direction.\n\nServices: Logo Redesign \u00b7 Visual Identity \u00b7 Typography \u00b7 Art Direction"
+      },
+      "Soundgate Instruments": {
+        extraImages: [
+          "images/image-22.webp",
+          "images/image-23.webp",
+          "images/image-24.webp",
+          "images/image-25.webp"
+        ],
+        fullText: "Soundgate Instruments handcrafts sound chairs — resonant, chair-shaped instruments carved from fine hardwoods in Germany and Portugal. Used for healing and deep relaxation by children, adults, and animals alike, the instruments work on a level deeper than simple relaxation. The studio already had its name, but no visual identity to go with it.\n\nThe brief required specific elements — a central figure flanked by two wing-like forms and a crescent moon — unified into one emblem that still ties back to the instrument itself. It also needed to feel beautiful and natural, yet unmistakably modern, never folkloric or purely spiritual.\n\nThe result is a hand-drawn sound wave resolving into a resting figure held within a crescent, drawn by hand, anchor point by anchor point, to match the craftsmanship of the instruments themselves.\n\nA warm, neutral palette with a single copper accent, paired with Playfair Display and Montserrat, and a custom icon set, extends the same language across every touch point.\n\nThe identity carries through stationery, product tags, tote bags, a brochure, and the website, keeping the brand consistent from a business card to a workshop booking. A natural photoshoot in the Alentejo region of Portugal captured the sound chairs in real use, grounding the brand in the same warmth and stillness it was built to represent.\n\nServices: Brand Identity · Logo Design · Visual System · Art Direction"
+      }
+      ,
+      "SCHÜWO": {
+        images: [
+          "images/image-26.webp",
+          "images/image-27.webp",
+          [
+            "images/image-28.webp",
+            "images/image-29.webp"
+          ],
+          "images/image-30.webp"
+        ],
+        fullText: "SCHÜWO is an existing Swiss mineral water brand — this redesign was created independently as a design exploration, not a commissioned client project. The idea came from a simple observation: someone who genuinely loved the water itself couldn't quite connect with how it was presented — the packaging felt more decorative than the product needed.\n\nThe original design leans on illustrative, ornamental elements that don't necessarily speak to why people reach for mineral water in the first place. A health-conscious buyer isn't won over by decoration — they're looking for clarity, purity, and calm: something that reflects the simplicity of water itself and a mindful relationship with the body.\n\nThe concept replaces the original label with type printed directly onto clear glass, so the water itself stays visible — the product becomes the packaging. A minimal mountain silhouette and the Swiss cross anchor the brand in its origin, while a mix of confident serif and clean sans-serif typography gives it an understated, premium feel.\n\nThe system covers both variants — sparkling and still — differentiated only by a single line of type, keeping the two feel like part of one considered family rather than competing products.\n\nThe result reads as quietly luxurious rather than loud — closer to a fragrance or a spirits bottle than typical mineral water, built to hold its own on a hotel table or a restaurant wine list.\n\nServices: Brand Identity · Packaging Design · Typography · Art Direction"
+      },
+      "Lunar Tide": {
+        extraImages: [
+          "images/image-31.webp",
+          "images/image-32.webp"
+        ],
+        fullText: "A visual world for a contemporary meditation candle, created for Gen Z teens, combining ritual, spirituality and self-care through packaging and art direction.\n\nLunar Tide is a conceptual self-care brand created specifically for teenagers aged around 12 to 18, designed to feel modern and calming without leaning on spiritual clich\u00e9s or looking too clinical for its audience.\n\nThe goal was to make mindfulness approachable rather than serious or intimidating. Holographic foil, playful typography, and simple symbols (a moon, a wave, a spark, a crystal) speak to teenagers emotionally and stand apart from classic wellness design.\n\nThe candle is designed as part of a complete ritual rather than a standalone product: premium packaging, a guided affirmation booklet, short meditation exercises, and affirmation cards all encourage a few minutes of intentional self-care. Inside the booklet, a short moonlight meditation and a daily affirmation extend the ritual beyond simply lighting a candle.\n\nSoft pastel gradients, celestial symbolism, and expressive illustration combine with premium, cosmetic-inspired finishes to create a visual identity that feels playful, sophisticated, and highly shareable, the kind of design teenagers want to photograph as much as use.\n\nThe result is a gift-worthy, collectible piece that resonates equally with teenagers building their own self-care routine and with anyone looking for a meaningful present for the Gen Z generation.\n\nServices: Brand Identity \u00b7 Packaging Design \u00b7 Illustration \u00b7 Art Direction"
+      },
+      "AVEO — Supplement System": {
+        images: [
+          "images/image-33.webp",
+          "images/image-34.webp",
+          "images/image-35.webp",
+          "images/image-36.webp",
+          "images/image-37.webp",
+          "images/image-38.webp",
+          "images/image-39.webp"
+        ],
+        fullText: "The supplement market is often dominated by crowded packaging, inconsistent product hierarchies, and aggressive colour coding. As product ranges expand, maintaining clarity and recognition becomes increasingly difficult.\n\nThe objective was to create a packaging architecture for AVEO that could organise a growing portfolio of vitamins, minerals, and combination formulas within a single, coherent visual system.\n\nInspired by the organisational logic of the periodic table, we developed a modular design language that allows products to be identified instantly while remaining visually connected. Large codes serve as the primary visual element, replacing the need for excessive labelling and reducing visual noise. Soft pastel gradients were introduced to create differentiation while preserving a calm, contemporary aesthetic.\n\nThe system was designed to support both single-ingredient products and combination formulas, enabling future product extensions without introducing new visual rules.\n\nThe result is a scalable packaging system that combines scientific structure with modern minimalism. By transforming nutrients into a clear visual language, the design creates instant recognition across the product range while maintaining a refined, premium brand experience.\n\nServices: Brand Identity · Packaging Design · Design System · Art Direction"
+      },
+      "Nøra Mushroom Coffee": {
+        images: [
+          "images/image-40.webp",
+          "images/image-41.webp",
+          "images/image-42.webp",
+          "images/image-43.webp",
+          "images/image-44.webp"
+        ],
+        fullText: "Nøra wanted to build a brand that would appeal to a spiritually-minded audience — without looking like it belongs on an esoterics shelf. The challenge: a design that makes ritual and mindfulness tangible, while staying approachable for a broad audience.\n\nThe solution lives in the illustration style: instead of heavy, mystical symbolism, we developed a playful, colourful visual world of eyes, mushrooms, snakes and moons — intriguing rather than intimidating, young and friendly rather than aloof.\n\nClean, modern typography meets hand-drawn detail. The result is shelf presence that stands out without narrowing in on a single audience: people drawn to mindfulness feel just as invited as anyone simply discovering a beautiful product.\n\nThe outcome is a brand that balances substance with lightness — approachable, inviting, and still carrying a clear point of view.\n\nServices: Brand Identity · Packaging Design · Illustration · Art Direction"
+      },
+      "BLOC Group": {
+        images: [
+          "images/image-45.webp",
+          "images/image-46.webp",
+          "images/image-47.webp",
+          "images/image-48.webp",
+          "images/image-49.webp",
+          "images/image-50.webp",
+          "images/image-51.webp",
+          "images/image-52.webp",
+          "images/image-53.webp"
+        ],
+        fullText: "Originally designed as a printed annual report for a real client, this project was later reimagined as a presentation system — exploring how the same content and identity could work in a pitch or meeting context.\n\nThe objective was to preserve the established corporate identity while improving clarity, readability, and visual impact for presentation use. The target audience included executive leadership, investors, business partners, procurement teams, and industrial clients.\n\nThe project focused on redesigning complex editorial layouts into a cohesive presentation system with a clear visual hierarchy, simplified information architecture, and presentation-ready compositions. Data visualizations, KPI pages, infographics, and presentation layouts were restructured to improve communication while maintaining the technical credibility of the original content.\n\nA recurring network motif was introduced as the central visual concept, symbolizing connectivity, collaboration, and integrated systems. Reappearing throughout the presentation, this visual language creates consistency across all slides while reinforcing the company's core values of partnership, organization, expertise, and innovation.\n\nThe final result is a contemporary corporate presentation system that combines bold typography, geometric compositions, industrial photography, and a cohesive design language to communicate engineering excellence, operational efficiency, and technological leadership."
+      }
+    ,
+      "cleanframe.ch": {
+        link: "https://cleanframe.ch",
+        extraImages: [
+          "images/image-54.webp",
+          "images/image-55.webp",
+          "images/image-56.webp",
+          "images/image-57.webp",
+          "images/image-58.webp",
+          "images/image-59.webp"
+        ],
+        fullText: "One Page. One Clear Direction.\n\nCleanframe specialises in designing focused one-page websites for businesses that need a clear and professional digital presence without the complexity of a larger website. The website was designed to reflect this same principle: concentrate the essential information, remove unnecessary distractions, and make the offer immediately understandable.\n\nThe one-page structure became the foundation for the entire experience. Instead of dividing the content across multiple pages, the information is organised into a continuous sequence that guides visitors from the initial introduction through the services and key information to the final enquiry.\n\nThe visual direction follows the same philosophy. Clean typography, generous spacing, a restrained graphic language, and clearly defined sections create a calm and structured interface. Each section has a distinct role while remaining part of one coherent visual system.\n\nParticular attention was given to hierarchy and pacing. Headlines establish the main messages, supporting information is kept concise, and the layout creates enough space between individual sections to make the page easy to scan. The result is a website that feels focused rather than overloaded, while still giving visitors everything they need to understand the offer.\n\nThe project demonstrates how a deliberately reduced website can become more effective through clarity rather than complexity. By treating the One-Pager as a complete visual and informational experience rather than simply a shortened website, Cleanframe presents its own design philosophy directly through the medium it offers.\n\nServices: Web Design \u00b7 UX Design \u00b7 Art Direction \u00b7 One-Page Design \u00b7 Responsive Design"
+      },
+      "nael.agency": {
+        extraImages: [
+          "images/image-60.webp",
+          "images/image-61.webp",
+          "images/image-62.webp"
+        ],
+        link: "https://nael.agency",
+        fullText: "A Digital Home for the Work.\n\nNAEL is an independent creative studio created to bring together brand identity, packaging, presentation, and digital design under one visual direction. The website was developed in-house as the studio\u2019s own digital presence, with the aim of creating a focused environment where the work could take centre stage.\n\nThe concept was to keep the website deliberately reduced. Instead of building the experience around extensive agency messaging, the structure leads visitors quickly into the portfolio, with a simple navigation connecting the studio, its work, and the people behind it.\n\nThe portfolio is organised into three clear areas: Brand & Packaging, Brand Presentations, and Web Design. This creates an intuitive structure for a growing body of work while allowing each project to retain its own visual character.\n\nThe visual direction follows the same principle of restraint. Strong typography, generous space, minimal navigation, and carefully selected project imagery create a quiet framework around the work. The interface is intentionally understated, allowing the individual projects to provide the visual richness while the website itself maintains a consistent studio identity.\n\nThe result is a portfolio website that functions as an extension of the studio rather than a conventional agency brochure. The positioning, structure, visual direction, and presentation of the work were developed as one coherent experience, creating a digital home that feels focused, contemporary, and deliberately work-led.\n\nServices: Web Design \u00b7 UX Design \u00b7 Art Direction \u00b7 Portfolio Design \u00b7 Digital Art Direction"
+      }};
+
+    var modal = document.getElementById('projectModal');
+    var modalImages = document.getElementById('projectModalImages');
+    var modalTitle = document.getElementById('projectModalTitle');
+    var modalTag = document.getElementById('projectModalTag');
+    var modalMeta = document.getElementById('projectModalMeta');
+    var modalText = document.getElementById('projectModalText');
+    var modalLink = document.getElementById('projectModalLink');
+    var closeBtn = document.getElementById('projectModalClose');
+
+    function openModal(card){
+      var title = card.querySelector('.card-title').textContent;
+      var tag = card.querySelector('.card-tag') ? card.querySelector('.card-tag').textContent : '';
+      var meta = card.querySelector('.card-meta') ? card.querySelector('.card-meta').textContent : '';
+      var desc = card.querySelector('.card-desc') ? card.querySelector('.card-desc').textContent : '';
+      var mainImg = card.querySelector('.thumb img');
+
+      var extras = projectExtras[title] || {};
+      var images = [];
+      if (extras.images) {
+        // Project defines its own full, exact image order
+        images = extras.images;
+      } else {
+        if (mainImg) images.push(mainImg.src);
+        if (extras.extraImages) images = images.concat(extras.extraImages);
+      }
+
+      modalImages.innerHTML = '';
+      images.forEach(function(src){
+        if (Array.isArray(src)) {
+          var row = document.createElement('div');
+          row.className = 'project-modal-image-row';
+          src.forEach(function(pairSrc){
+            var img = document.createElement('img');
+            img.src = pairSrc;
+            img.alt = title;
+            row.appendChild(img);
+          });
+          modalImages.appendChild(row);
+        } else {
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = title;
+          modalImages.appendChild(img);
+        }
+      });
+
+      modalTitle.textContent = title;
+      modalTag.textContent = tag;
+      modalMeta.textContent = meta;
+      modalText.textContent = extras.fullText || desc;
+
+      if (extras.link) {
+        modalLink.href = extras.link;
+        modalLink.textContent = 'Visit ' + extras.link.replace(/^https?:\/\//, '') + ' \u2197';
+        modalLink.style.display = 'inline-block';
+      } else {
+        modalLink.style.display = 'none';
+      }
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Deep-link support for homepage project links
+    if (location.hash === "#aveo") {
+      var aveoTab = document.querySelector('.rubric-tab[data-target="packaging"]');
+      if (aveoTab) aveoTab.click();
+      setTimeout(function(){
+        var aveoCard = document.getElementById('aveo');
+        if (aveoCard) aveoCard.scrollIntoView({behavior:'instant', block:'start'});
+      }, 30);
+    }
+
+    document.querySelectorAll('.card').forEach(function(card){
+      card.addEventListener('click', function(e){
+        // avoid opening modal when the click was the start of a drag
+        if (card.classList.contains('dragging')) return;
+        openModal(card);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.querySelector('.project-modal-backdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+</script>
+<script>
+(function(){
+  function openProjectFromHash(){
+    var raw = (window.location.hash || '').replace(/^#/, '');
+    if (!raw) return;
+    var slug = raw.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    var cards = document.querySelectorAll('.card');
+    var match = null;
+    cards.forEach(function(card){
+      if (match) return;
+      var title = card.querySelector('.card-title');
+      if (!title) return;
+      var t = title.textContent.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      if (t === slug) match = card;
+    });
+    if (!match) return;
+    var targetPanel = match.closest('[data-panel]');
+    if (targetPanel) {
+      var tab = document.querySelector('.rubric-tab[data-target="'+targetPanel.id+'"]');
+      if (tab) tab.click();
+    }
+    setTimeout(function(){ match.click(); }, 80);
+  }
+  window.addEventListener('hashchange', openProjectFromHash);
+  window.addEventListener('load', function(){ setTimeout(openProjectFromHash, 120); });
+})();
+</script>
+</body>
+</html>
