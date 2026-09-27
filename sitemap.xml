@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://elianehougee.me/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/index-de.html"/>
+  </url>
+  <url>
+    <loc>https://elianehougee.me/index-de.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/index-de.html"/>
+  </url>
+
+  <url>
+    <loc>https://elianehougee.me/work.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/work.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/work-de.html"/>
+  </url>
+  <url>
+    <loc>https://elianehougee.me/work-de.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/work.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/work-de.html"/>
+  </url>
+
+  <url>
+    <loc>https://elianehougee.me/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/about-de.html"/>
+  </url>
+  <url>
+    <loc>https://elianehougee.me/about-de.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/about-de.html"/>
+  </url>
+
+  <url>
+    <loc>https://elianehougee.me/cv.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/cv.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/cv-de.html"/>
+  </url>
+  <url>
+    <loc>https://elianehougee.me/cv-de.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elianehougee.me/cv.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elianehougee.me/cv-de.html"/>
+  </url>
+
+</urlset>
